@@ -2,6 +2,12 @@
 
 A basic Laravel application for managing student admissions using the Filament admin panel.
 
+This system allows students to apply for admission into college courses through a public-facing form. Admin users can manage colleges, courses, and student applications from a secure admin dashboard built with Filament. Upon application, students receive a confirmation message and are notified that their application is pending approval.
+
+✅ Designed for fast prototyping — with pre-seeded data for colleges, courses, and students.
+
+🛠️ Built with Laravel’s powerful backend and Filament’s beautiful admin interface for rapid development and clean management.
+
 ---
 
 ## ✨ Features
