@@ -11,12 +11,13 @@ class StudentFactory extends Factory
 
     public function definition(): array
     {
+        $randomYears = random_int(17, 26);
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $this->faker->phoneNumber(),
             'gender' => $this->faker->randomElement(['male', 'female', 'other']),
-            'date_of_birth' => $this->faker->date('Y-m-d', '-18 years'),
+            'date_of_birth' => $this->faker->date('Y-m-d', "-{$randomYears} years"),
             'marital_status' => $this->faker->randomElement(['single', 'married', 'divorced', 'widowed']),
             'county_of_birth' => $this->faker->state(),
 

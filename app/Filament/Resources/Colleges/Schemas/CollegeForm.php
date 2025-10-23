@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Colleges\Schemas;
 
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
 class CollegeForm
@@ -10,7 +11,8 @@ class CollegeForm
     {
         return $schema
             ->components([
-                //
+                TextInput::make('name')
+                    ->required(),
             ]);
     }
 }

@@ -3,19 +3,17 @@
 namespace App\Filament\Resources\Colleges\Pages;
 
 use App\Filament\Resources\Colleges\CollegeResource;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\ViewAction;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Actions\EditAction;
+use Filament\Resources\Pages\ViewRecord;
 
-class EditCollege extends EditRecord
+class ViewCollege extends ViewRecord
 {
     protected static string $resource = CollegeResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            ViewAction::make(),
-            DeleteAction::make(),
+            EditAction::make(),
         ];
     }
 }
