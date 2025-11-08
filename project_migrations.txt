@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('role')->default('trainer'); //trainer, admin
+            $table->string('role')->default('trainer'); // trainer, admin
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
@@ -201,6 +201,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('code')->unique();
+            $table->string('level'); // 4, 5, 6, Artisan, Craft, Diploma or RPL
             $table->text('description')->nullable();
             $table->foreignId('department_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
@@ -234,23 +235,27 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             // main details
-            $table->bigInteger('admission_number'); // i.e. 
+            $table->string('admission_number')->unique(); // i.e.
             $table->string('first_name');
+            $table->string('middle_names')->nullable(); // for 1+ middle names
             $table->string('last_name');
             $table->string('photo')->nullable(); // avatar image
             $table->enum('gender', ['male', 'female', 'other']); // gender
-            $table->date('birth_date'); // date of birth
+            $table->date('date_of_birth'); // date of birth
             // Contacts
             $table->string('email')->unique();
             $table->string('phone'); // primary i.e. safaricom
             $table->string('alternative_phone')->nullable(); // secondary phone i.e. airtel
             // parental details
             $table->string('parent_name'); // parent or guardian or next of kin
-            $table->string('parent_phone'); // parent or guardian phone
+            $table->string('parent_phone')->nullable(); // parent or guardian phone
 
             $table->foreignId('department_id')->constrained()->cascadeOnDelete();
             $table->foreignId('course_id')->constrained()->cascadeOnDelete();
             $table->date('admission_date')->nullable();
+            $table->index('department_id');
+            $table->index('course_id');
+            $table->index('admission_number');
             $table->timestamps();
         });
     }
