@@ -3,28 +3,25 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Course extends Model
+class Department extends Model
 {
     protected $fillable = [
         'name',
-        'code',
         'description',
-        'department_id',
     ];
 
     /**
-     * Department the course belongs to
+     * Get courses under this department
      */
-    public function department(): BelongsTo
+    public function courses(): HasMany
     {
-        return $this->belongsTo(Department::class);
+        return $this->hasMany(Course::class);
     }
 
     /**
-     * Students enrolled in the course
+     * Get students in this department
      */
     public function students(): HasMany
     {
