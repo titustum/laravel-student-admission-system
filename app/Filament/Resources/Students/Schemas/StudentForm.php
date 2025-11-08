@@ -17,6 +17,7 @@ class StudentForm
                     ->required(),
                 TextInput::make('first_name')
                     ->required(),
+                TextInput::make('middle_names'),
                 TextInput::make('last_name')
                     ->required(),
                 TextInput::make('photo'),

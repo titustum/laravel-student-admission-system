@@ -19,12 +19,12 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin User',
             'email' => 'admin@example.com',
             'role' => 'admin',
-        ]); 
+        ]);
 
-        $this->call([ 
+        $this->call([
             DepartmentSeeder::class,
             CourseSeeder::class,
-            StudentSeeder::class, 
+            StudentSeeder::class,
         ]);
 
     }

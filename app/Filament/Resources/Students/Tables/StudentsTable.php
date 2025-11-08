@@ -19,6 +19,8 @@ class StudentsTable
                     ->searchable(),
                 TextColumn::make('first_name')
                     ->searchable(),
+                TextColumn::make('middle_names')
+                    ->searchable(),
                 TextColumn::make('last_name')
                     ->searchable(),
                 TextColumn::make('photo')

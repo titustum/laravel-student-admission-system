@@ -2,11 +2,11 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Student;
-use App\Models\Department;
 use App\Models\Course;
+use App\Models\Department;
+use App\Models\Student;
 use Faker\Factory as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class StudentFactory extends Factory
 {
@@ -28,7 +28,7 @@ class StudentFactory extends Factory
         return [
             'admission_number' => $this->faker->unique()->numerify('TTVC-######'),
             'first_name' => $faker->firstName($gender),
-            'middle_names' => $faker->optional()->firstName($gender) . ' ' . $faker->optional()->firstName($gender),
+            'middle_names' => $faker->optional()->firstName($gender).' '.$faker->optional()->firstName($gender),
             'last_name' => $faker->lastName,
             'photo' => null,
             'gender' => $gender,

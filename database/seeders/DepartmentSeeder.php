@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Department;
+use Illuminate\Database\Seeder;
 
 class DepartmentSeeder extends Seeder
 {
@@ -23,7 +23,7 @@ class DepartmentSeeder extends Seeder
         foreach ($departments as $deptName) {
             Department::create([
                 'name' => $deptName,
-                'description' => $deptName . ' department at Tetu TVC',
+                'description' => $deptName.' department at Tetu TVC',
             ]);
         }
     }

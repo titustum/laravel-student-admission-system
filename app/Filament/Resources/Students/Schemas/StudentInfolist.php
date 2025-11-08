@@ -13,6 +13,7 @@ class StudentInfolist
             ->components([
                 TextEntry::make('admission_number'),
                 TextEntry::make('first_name'),
+                TextEntry::make('middle_names'),
                 TextEntry::make('last_name'),
                 TextEntry::make('photo'),
                 TextEntry::make('gender'),

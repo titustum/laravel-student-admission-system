@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             // main details
-            $table->string('admission_number')->unique(); // i.e. 
+            $table->string('admission_number')->unique(); // i.e.
             $table->string('first_name');
             $table->string('middle_names')->nullable(); // for 1+ middle names
             $table->string('last_name');
