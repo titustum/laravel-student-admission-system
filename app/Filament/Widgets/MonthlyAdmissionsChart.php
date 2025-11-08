@@ -2,9 +2,10 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\Student;
 use Filament\Widgets\ChartWidget;
-use Illuminate\Support\Facades\DB;
+use App\Models\Student;
+use Flowframe\Trend\Trend;
+use Flowframe\Trend\TrendValue;
 
 class MonthlyAdmissionsChart extends ChartWidget
 {
@@ -12,29 +13,34 @@ class MonthlyAdmissionsChart extends ChartWidget
 
     protected static ?int $sort = 4;
 
-    protected string $color = 'info';
+    protected int | string | array $columnSpan = 'full'; // This line makes the widget span full width
+
+    // Optional: default color
+    protected string $color = 'success';
 
     protected function getData(): array
     {
-        $admissions = Student::select(
-            DB::raw("strftime('%m', admission_date) as month"),
-            DB::raw('COUNT(*) as total')
-        )
-            ->groupBy('month')
-            ->orderBy('month')
-            ->pluck('total', 'month');
+        // Generate monthly trend data for students admitted this year
+        $data = Trend::model(Student::class)
+            ->between(
+                start: now()->startOfYear(),
+                end: now()->endOfYear(),
+            )
+            ->perMonth()
+            ->count();
 
         return [
             'datasets' => [
                 [
                     'label' => 'Admissions',
-                    'data' => $admissions->values(),
-                    'borderColor' => '#10b981',
+                    'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
+                    'borderColor' => '#10b981', // custom line color
+                    'backgroundColor' => '#d1fae5', // optional for points/fill
                     'fill' => false,
                     'tension' => 0.3,
                 ],
             ],
-            'labels' => $admissions->keys()->map(fn ($m) => date('F', mktime(0, 0, 0, (int) $m, 1))),
+            'labels' => $data->map(fn (TrendValue $value) => $value->date), // "Jan", "Feb", ...
         ];
     }
 
