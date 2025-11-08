@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\Colleges\Pages;
+namespace App\Filament\Resources\Users\Pages;
 
-use App\Filament\Resources\Colleges\CollegeResource;
+use App\Filament\Resources\Users\UserResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditCollege extends EditRecord
+class EditUser extends EditRecord
 {
-    protected static string $resource = CollegeResource::class;
+    protected static string $resource = UserResource::class;
 
     protected function getHeaderActions(): array
     {

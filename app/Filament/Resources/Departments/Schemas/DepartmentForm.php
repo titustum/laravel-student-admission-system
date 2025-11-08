@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Filament\Resources\Colleges\Schemas;
+namespace App\Filament\Resources\Departments\Schemas;
 
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 
-class CollegeForm
+class DepartmentForm
 {
     public static function configure(Schema $schema): Schema
     {
@@ -13,6 +14,8 @@ class CollegeForm
             ->components([
                 TextInput::make('name')
                     ->required(),
+                Textarea::make('description')
+                    ->columnSpanFull(),
             ]);
     }
 }

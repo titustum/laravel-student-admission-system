@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             // main details
-            $table->bigInteger('admission_number')->unique(); // i.e. 
+            $table->string('admission_number')->unique(); // i.e. 
             $table->string('first_name');
+            $table->string('middle_names')->nullable(); // for 1+ middle names
             $table->string('last_name');
             $table->string('photo')->nullable(); // avatar image
             $table->enum('gender', ['male', 'female', 'other']); // gender
-            $table->date('birth_date'); // date of birth
+            $table->date('date_of_birth'); // date of birth
             // Contacts
             $table->string('email')->unique();
             $table->string('phone'); // primary i.e. safaricom

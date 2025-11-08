@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('code')->unique();
+            $table->string('level'); // 4, 5, 6, Artisan, Craft, Diploma or RPL
             $table->text('description')->nullable();
             $table->foreignId('department_id')->constrained()->cascadeOnDelete();
             $table->timestamps();

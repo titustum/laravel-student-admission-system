@@ -4,12 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Student extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'admission_number',
         'first_name',
+        'middle_names',
         'last_name',
         'photo',
         'gender',
@@ -45,6 +49,6 @@ class Student extends Model
      */
     public function getFullNameAttribute(): string
     {
-        return "{$this->first_name} {$this->last_name}";
+        return "{$this->first_name} {$this->middle_names} {$this->last_name}";
     }
 }

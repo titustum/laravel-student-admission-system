@@ -17,7 +17,12 @@ class CoursesTable
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),
-                TextColumn::make('college.name') 
+                TextColumn::make('code')
+                    ->searchable(),
+                TextColumn::make('level')
+                    ->searchable(),
+                TextColumn::make('department.name')
+                    ->numeric()
                     ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()

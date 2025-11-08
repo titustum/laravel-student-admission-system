@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa327707a1adce2199f38856516e8b53",
+    "content-hash": "2964d7f91dba49f81400c2639ce0410d",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -11394,6 +11394,47 @@
                 }
             ],
             "time": "2024-03-03T12:36:25+00:00"
+        },
+        {
+            "name": "titustum/kenyan-faker-provider",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/titustum/kenyan-faker-provider.git",
+                "reference": "2752f874b11a82894f541cfb495db287fd33fea8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/titustum/kenyan-faker-provider/zipball/2752f874b11a82894f541cfb495db287fd33fea8",
+                "reference": "2752f874b11a82894f541cfb495db287fd33fea8",
+                "shasum": ""
+            },
+            "require": {
+                "fakerphp/faker": "^1.24"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "KenyaFaker\\": "src/",
+                    "KenyaFaker\\Provider\\": "src/Provider/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Titus Tum",
+                    "email": "tituskiptanuitum@gmail.com"
+                }
+            ],
+            "description": "Kenyan-specific Faker provider for Laravel and PHP Faker",
+            "support": {
+                "issues": "https://github.com/titustum/kenyan-faker-provider/issues",
+                "source": "https://github.com/titustum/kenyan-faker-provider/tree/v1.0.3"
+            },
+            "time": "2025-09-14T14:00:05+00:00"
         }
     ],
     "aliases": [],

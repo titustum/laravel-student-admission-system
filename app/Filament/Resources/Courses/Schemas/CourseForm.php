@@ -2,7 +2,9 @@
 
 namespace App\Filament\Resources\Courses\Schemas;
 
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 
 class CourseForm
@@ -13,9 +15,15 @@ class CourseForm
             ->components([
                 TextInput::make('name')
                     ->required(),
-                TextInput::make('college_id')
-                    ->required()
-                    ->numeric(),
+                TextInput::make('code')
+                    ->required(),
+                TextInput::make('level')
+                    ->required(),
+                Textarea::make('description')
+                    ->columnSpanFull(),
+                Select::make('department_id')
+                    ->relationship('department', 'name')
+                    ->required(),
             ]);
     }
 }
