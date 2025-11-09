@@ -23,7 +23,6 @@ class StudentFactory extends Factory
             array_merge(array_fill(0, 3, 'male'), array_fill(0, 3, 'female'), ['other'])
         );
 
-
         // Random department and course
         $department = Department::inRandomOrder()->first();
         $course = $department ? $department->courses()->inRandomOrder()->first() : null;

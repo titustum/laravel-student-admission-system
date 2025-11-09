@@ -2,17 +2,15 @@
 
 namespace App\Filament\Widgets;
 
-use Filament\Actions\BulkActionGroup; 
-use Filament\Tables\Columns\TextColumn;
+use App\Models\Student;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Widgets\TableWidget;
 use Illuminate\Database\Eloquent\Builder;
-use App\Models\Student;
-use App\Models\Department;
-use App\Models\Course;
-use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
 
 class LatestAdmissionsTable extends TableWidget
 {
@@ -39,7 +37,7 @@ class LatestAdmissionsTable extends TableWidget
             TextColumn::make('first_name')
                 ->label('First Name')
                 ->sortable()
-                ->searchable(), 
+                ->searchable(),
 
             TextColumn::make('last_name')
                 ->label('Last Name')

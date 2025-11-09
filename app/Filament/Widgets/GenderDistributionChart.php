@@ -9,7 +9,6 @@ class GenderDistributionChart extends ChartWidget
 {
     protected ?string $heading = 'Gender Distribution Chart';
 
-
     protected static ?int $sort = 3;
 
     protected function getData(): array
