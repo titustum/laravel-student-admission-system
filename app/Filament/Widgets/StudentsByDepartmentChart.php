@@ -21,6 +21,7 @@ class StudentsByDepartmentChart extends ChartWidget
                     'label' => 'Students',
                     'data' => $departments->pluck('students_count'),
                     'backgroundColor' => '#3b82f6',
+                    'borderColor' => '#10b981', // custom line color
                 ],
             ],
             'labels' => $departments->pluck('name'),

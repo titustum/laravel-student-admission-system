@@ -13,10 +13,10 @@ class MonthlyAdmissionsChart extends ChartWidget
 
     protected static ?int $sort = 4;
 
-    protected int | string | array $columnSpan = 'full'; // This line makes the widget span full width
+    // protected int | string | array $columnSpan = 'full'; // This line makes the widget span full width
 
     // Optional: default color
-    protected string $color = 'success';
+    protected string $color = 'warning';
 
     protected function getData(): array
     {
@@ -34,7 +34,7 @@ class MonthlyAdmissionsChart extends ChartWidget
                 [
                     'label' => 'Admissions',
                     'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
-                    'borderColor' => '#10b981', // custom line color
+                    'borderColor' => 'orange', // custom line color
                     'backgroundColor' => '#d1fae5', // optional for points/fill
                     'fill' => false,
                     'tension' => 0.3,

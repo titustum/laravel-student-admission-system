@@ -19,7 +19,10 @@ class StudentFactory extends Factory
         $faker->addProvider(new \KenyaFaker\Provider\en_KE\PhoneNumber($faker));
 
         // Random gender
-        $gender = $this->faker->randomElement(['male', 'female', 'other']);
+        $gender = $this->faker->randomElement(
+            array_merge(array_fill(0, 3, 'male'), array_fill(0, 3, 'female'), ['other'])
+        );
+
 
         // Random department and course
         $department = Department::inRandomOrder()->first();
@@ -41,6 +44,7 @@ class StudentFactory extends Factory
             'department_id' => $department?->id,
             'course_id' => $course?->id,
             'admission_date' => $faker->dateTimeBetween('-1 years', 'now')->format('Y-m-d'),
+            'created_at' => $faker->dateTimeBetween('-1 years', 'now')->format('Y-m-d'),
         ];
     }
 }

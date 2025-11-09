@@ -9,6 +9,7 @@ class GenderDistributionChart extends ChartWidget
 {
     protected ?string $heading = 'Gender Distribution Chart';
 
+
     protected static ?int $sort = 3;
 
     protected function getData(): array
@@ -30,6 +31,11 @@ class GenderDistributionChart extends ChartWidget
 
     protected function getType(): string
     {
-        return 'bar';
+        return 'pie';
+    }
+
+    protected function getMaxHeight(): ?string
+    {
+        return '270px'; // or '20rem', '50vh', etc.
     }
 }
