@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0266a23f4f4e67ad98e54ae254ca2a93",
+    "content-hash": "cd390037f1091ffb8a1f6aae152f7c04",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -509,7 +509,7 @@
                 }
             ],
             "time": "2024-07-16T11:13:48+00:00"
-        }, 
+        },
         {
             "name": "danharrin/date-format-converter",
             "version": "v0.3.1",
